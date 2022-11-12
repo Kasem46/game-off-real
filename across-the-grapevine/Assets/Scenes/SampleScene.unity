@@ -222,7 +222,23 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -232,22 +248,22 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 1e-45
+      e00: 0.0000000011691981
       e01: 0
       e02: -3.0700943e+29
       e03: -3.0700943e+29
-      e10: 0
+      e10: 7.38e-43
       e11: 0
       e12: 7.37e-43
       e13: 7.37e-43
       e20: -8300.906
       e21: 1e-45
-      e22: 9.297261e-10
-      e23: -8.793104e+31
+      e22: 0.0000000012097106
+      e23: 2.0011597
       e30: 4.5905e-41
       e31: 0
       e32: 7.38e-43
-      e33: 7.38e-43
+      e33: 7.41e-43
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
@@ -445,6 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789818990}
   - component: {fileID: 1789818989}
+  - component: {fileID: 1789818991}
   m_Layer: 0
   m_Name: BEAN my beloved
   m_TagString: Untagged
@@ -519,3 +536,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789818991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789818988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376962ade770fc3499373557ed86b9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VerticalLine: {fileID: 11400000, guid: 6ef7a295b367681469f882effd1a1961, type: 2}
+  tilemap: {fileID: 297834970}
+  screenPosition: {x: 4, y: 4, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
