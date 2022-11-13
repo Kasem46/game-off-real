@@ -26,9 +26,9 @@ public class Placetile : MonoBehaviour
         } else if (mousePos.y == -1  && mousePos.x == -5 && Input.GetMouseButtonDown(0)) {
             SelectedTile = ForkLeft;
         } else if (mousePos.y == -3  && mousePos.x == -5 && Input.GetMouseButtonDown(0)) {
-            SelectedTile = ForkDown;
-        } else if (mousePos.y == 3  && mousePos.x == -5 && Input.GetMouseButtonDown(0)) {
             SelectedTile = ForkUp;
+        } else if (mousePos.y == 3  && mousePos.x == -5 && Input.GetMouseButtonDown(0)) {
+            SelectedTile = ForkDown;
         } else if (mousePos.y == 1  && mousePos.x == -7 && Input.GetMouseButtonDown(0)) {
             SelectedTile = LeftDownTurn;
         } else if (mousePos.y == -1  && mousePos.x == -7 && Input.GetMouseButtonDown(0)) {
