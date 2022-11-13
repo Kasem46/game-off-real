@@ -850,6 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569762216}
+  - component: {fileID: 569762217}
   m_Layer: 0
   m_Name: Burger
   m_TagString: Untagged
@@ -872,6 +873,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569762217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569762215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190666be7ded5d34ca7d5d0020852c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forkDownCounter: {fileID: 1404625800}
+  forkRightCounter: {fileID: 1461289195}
+  forkLeftCounter: {fileID: 1226000991}
+  forkUpCounter: {fileID: 1923200057}
+  downRightCornerCounter: {fileID: 1752860819}
+  downLeftCornerCounter: {fileID: 500693305}
+  upLeftCornerCounter: {fileID: 1363618951}
+  upRightCornerCounter: {fileID: 458315998}
+  fourWayCounter: {fileID: 550558552}
+  verticalLineCounter: {fileID: 1249954715}
+  lineHorizontalCounter: {fileID: 1291910026}
+  forkDownCounterNumber: 2
+  forkRightCounterNumber: 2
+  forkLeftCounterNumber: 2
+  forkUpCounterNumber: 2
+  downRightCornerCounterNumber: 2
+  downLeftCornerCounterNumber: 2
+  upLeftCornerCounterNumber: 2
+  upRightCornerCounterNumber: 2
+  fourWayCounterNumber: 2
+  verticalLineCounterNumber: 2
+  lineHorizontalCounterNumber: 2
 --- !u!1 &1226000989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1663,7 @@ MonoBehaviour:
   tilemap: {fileID: 297834970}
   screenPosition: {x: 4, y: 4, z: 0}
   worldPosition: {x: 0, y: 0, z: 0}
+  tileCounter: {fileID: 0}
 --- !u!1 &1799628353
 GameObject:
   m_ObjectHideFlags: 0

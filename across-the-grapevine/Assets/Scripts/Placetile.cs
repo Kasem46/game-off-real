@@ -9,6 +9,8 @@ public class Placetile : MonoBehaviour
     public Vector3 screenPosition;
     public Vector3 worldPosition;
 
+    public TileCounter tileCounter;
+
     void Paint(Vector3Int Position, Tile tile) { //Function to set tiles
         tilemap.SetTile(Position, tile);
     }
