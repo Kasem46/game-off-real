@@ -13,6 +13,7 @@ public class Placetile : MonoBehaviour
 
     void Paint(Vector3Int Position, Tile tile) { //Function to set tiles
         tilemap.SetTile(Position, tile);
+        SelectedTile = null;
     }
     void Update() { //Function to kill whoever reads this
         screenPosition = Input.mousePosition;
