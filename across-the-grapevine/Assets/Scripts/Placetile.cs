@@ -18,7 +18,8 @@ public class Placetile : MonoBehaviour
         int y = (int) Math.Floor(worldPosition.y);
         int x = (int)Math.Floor(worldPosition.x);
         Vector3Int mousePos = (new Vector3Int (x, y, 0));
-        if (Input.GetMouseButtonDown(0) && mousePos.y <= 1 && mousePos.x <= 1 && mousePos.x >= -2 && mousePos.y >= -2) {
+        //good luck
+        if (Input.GetMouseButtonDown(0) && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2))) {
             Paint(mousePos);
         }
 
