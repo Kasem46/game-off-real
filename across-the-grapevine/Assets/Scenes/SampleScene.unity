@@ -1663,7 +1663,7 @@ MonoBehaviour:
   tilemap: {fileID: 297834970}
   screenPosition: {x: 4, y: 4, z: 0}
   worldPosition: {x: 0, y: 0, z: 0}
-  tileCounter: {fileID: 0}
+  tileCounter: {fileID: 569762217}
 --- !u!1 &1799628353
 GameObject:
   m_ObjectHideFlags: 0

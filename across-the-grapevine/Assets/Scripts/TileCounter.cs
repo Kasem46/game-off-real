@@ -9,8 +9,8 @@ public class TileCounter : MonoBehaviour
     public Text forkDownCounter; public Text forkRightCounter; public Text forkLeftCounter; public Text forkUpCounter; public Text downRightCornerCounter; public Text downLeftCornerCounter; public Text upLeftCornerCounter; public Text upRightCornerCounter; public Text fourWayCounter; public Text verticalLineCounter; public Text lineHorizontalCounter; //don't you love declaring variables
     public int forkDownCounterNumber; public int forkRightCounterNumber; public int forkLeftCounterNumber; public int forkUpCounterNumber; public int downRightCornerCounterNumber; public int downLeftCornerCounterNumber; public int upLeftCornerCounterNumber; public int upRightCornerCounterNumber; public int fourWayCounterNumber; public int verticalLineCounterNumber; public int lineHorizontalCounterNumber;
 
-    private Text[] texts;
-    private int[] numbers;
+    public Text[] texts;
+    public int[] numbers;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,9 @@ public class TileCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for(int i = 0; i < numbers.Length; i++){
+            texts[i].text = "X " + numbers[i];
+        }
     }
 
     public void RemoveTile(int i) {
