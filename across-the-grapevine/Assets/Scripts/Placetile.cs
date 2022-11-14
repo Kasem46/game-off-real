@@ -22,42 +22,46 @@ public class Placetile : MonoBehaviour
         int x = (int)Math.Floor(worldPosition.x);
         Vector3Int mousePos = (new Vector3Int (x, y, 0));
         //good luck, I don't know what this is
-        //add if statement to check that players tile is not null
-        if (Input.GetMouseButtonDown(0) && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2))) {
-            Paint(mousePos, SelectedTile);
-        } else if (mousePos.y == 1  && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[1] > 0) {
-            SelectedTile = ForkRight;
-            tileCounter.RemoveTile(1);
-        } else if (mousePos.y == -1  && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[2] > 0) {
-            SelectedTile = ForkLeft;
-            tileCounter.RemoveTile(2);
-        } else if (mousePos.y == -3  && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[3] > 0) {
-            SelectedTile = ForkUp;
-            tileCounter.RemoveTile(3);
-        } else if (mousePos.y == 3  && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[0] > 0) {
-            SelectedTile = ForkDown;
-            tileCounter.RemoveTile(0);
-        } else if (mousePos.y == 1  && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[5] > 0) {
-            SelectedTile = LeftDownTurn;
-            tileCounter.RemoveTile(5);
-        } else if (mousePos.y == -1  && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[6] > 0) {
-            SelectedTile = LeftUpTurn;
-            tileCounter.RemoveTile(6);
-        } else if (mousePos.y == -3  && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[7] > 0) {
-            SelectedTile = RightUpTurn;
-            tileCounter.RemoveTile(7);
-        } else if (mousePos.y == 3  && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[4] > 0) {
-            SelectedTile = RightDownTurn;
-            tileCounter.RemoveTile(4);
-        } else if (mousePos.y == 1  && mousePos.x == 3 && Input.GetMouseButtonDown(0) && tileCounter.numbers[10] > 0) {
-            SelectedTile = HorisontalLine;
-            tileCounter.RemoveTile(10);
-        } else if (mousePos.y == 3  && mousePos.x == 3 && Input.GetMouseButtonDown(0) && tileCounter.numbers[8] > 0) {
-            SelectedTile = Crossroads;
-            tileCounter.RemoveTile(8);
-        } else if (mousePos.y == 3  && mousePos.x == 5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[9] > 0) {
-            SelectedTile = VerticalLine;
-            tileCounter.RemoveTile(9);
-        } 
+        if (SelectedTile != null) {
+            if (Input.GetMouseButtonDown(0) && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2))) {
+                Paint(mousePos, SelectedTile);
+            }
+        }
+        if (SelectedTile == null) {
+            if (mousePos.y == 1 && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[1] > 0) {
+                SelectedTile = ForkRight;
+                tileCounter.RemoveTile(1);
+            } else if (mousePos.y == -1 && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[2] > 0) {
+                SelectedTile = ForkLeft;
+                tileCounter.RemoveTile(2);
+            } else if (mousePos.y == -3 && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[3] > 0) {
+                SelectedTile = ForkUp;
+                tileCounter.RemoveTile(3);
+            } else if (mousePos.y == 3 && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[0] > 0) {
+                SelectedTile = ForkDown;
+                tileCounter.RemoveTile(0);
+            } else if (mousePos.y == 1 && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[5] > 0) {
+                SelectedTile = LeftDownTurn;
+                tileCounter.RemoveTile(5);
+            } else if (mousePos.y == -1 && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[6] > 0) {
+                SelectedTile = LeftUpTurn;
+                tileCounter.RemoveTile(6);
+            } else if (mousePos.y == -3 && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[7] > 0) {
+                SelectedTile = RightUpTurn;
+                tileCounter.RemoveTile(7);
+            } else if (mousePos.y == 3 && mousePos.x == -7 && Input.GetMouseButtonDown(0) && tileCounter.numbers[4] > 0) {
+                SelectedTile = RightDownTurn;
+                tileCounter.RemoveTile(4);
+            } else if (mousePos.y == 1 && mousePos.x == 3 && Input.GetMouseButtonDown(0) && tileCounter.numbers[10] > 0) {
+                SelectedTile = HorisontalLine;
+                tileCounter.RemoveTile(10);
+            } else if (mousePos.y == 3 && mousePos.x == 3 && Input.GetMouseButtonDown(0) && tileCounter.numbers[8] > 0) {
+                SelectedTile = Crossroads;
+                tileCounter.RemoveTile(8);
+            } else if (mousePos.y == 3 && mousePos.x == 5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[9] > 0) {
+                SelectedTile = VerticalLine;
+                tileCounter.RemoveTile(9);
+            }
+        }
     }
 }
