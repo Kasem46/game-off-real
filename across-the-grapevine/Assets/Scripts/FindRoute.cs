@@ -6,13 +6,14 @@ using UnityEngine.Tilemaps;
 public class FindRoute : MonoBehaviour
 {
     //array is y then x
-    //change to int array with numbers repesenting tile type
     bool[,] array2D = new bool[,] { { true, true, true, true }, { false, false, false, true}, { true, false, false, true}, { false, false, false, true} };
     public ITilemap tilemap;
     public Vector3 GrapePos;
     public Vector3 OldPos;
     public Vector3 Vec;
     public bool moving;
+
+
     void Start() {
         Vec.y = -1.5f;
         Vec.x = -1.5f;
@@ -25,7 +26,6 @@ public class FindRoute : MonoBehaviour
     }
     IEnumerator MoveVertical()
     {
-        //Change IEnumerator to detect number from array (swictch case), use number to detect tile type and therefore tell which direction grape can go in
         if (moving == false) {
             moving = true;
             if (GrapePos.y + 1 < 4 && array2D[(int)GrapePos.x, (int)GrapePos.y + 1] == true && GrapePos.y + 1 != OldPos.y)
