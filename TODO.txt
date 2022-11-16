@@ -1,0 +1,11 @@
+########## Framework
+Detect tilemap tile and then if can go direction
+Fix ui
+Deleteable tiles, gets readded to placible tiles
+Start button
+obsticles 
+win condition
+########## GAME
+Make the puzzles
+Progression system
+Level select UI?
