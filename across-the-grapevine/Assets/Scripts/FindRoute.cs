@@ -5,9 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class FindRoute : MonoBehaviour
 {
-    //array is y then x
+    //Array is structured such that x values are inside brackets while y values are the brackets themselves
     //change to int array with numbers repesenting tile type
-    bool[,] array2D = new bool[,] { { true, true, true, true }, { false, false, false, true}, { true, false, false, true}, { false, false, false, true} };
+    int[,] array2D = new int[,] { { 1, 0, 1, 1 }, {0, 1, 1, 1}, { 1, 1, 1, 1}, { 1, 1, 1, 1} };
     public ITilemap tilemap;
     public Vector3 GrapePos;
     public Vector3 OldPos;
@@ -21,29 +21,35 @@ public class FindRoute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(MoveVertical());
+        StartCoroutine(Move());
     }
-    IEnumerator MoveVertical()
+    IEnumerator Move()
     {
         //Change IEnumerator to detect number from array (swictch case), use number to detect tile type and therefore tell which direction grape can go in
         if (moving == false) {
             moving = true;
-            if (GrapePos.y + 1 < 4 && array2D[(int)GrapePos.x, (int)GrapePos.y + 1] == true && GrapePos.y + 1 != OldPos.y)
-            {
-                Vec.y += 1f;
-                OldPos = GrapePos;
-                GrapePos.y = GrapePos.y + 1f;
-            }
-            else if (GrapePos.y - 1 > -1 && array2D[(int)GrapePos.x, (int)GrapePos.y - 1] == true && GrapePos.y - 1 != OldPos.y)
-            {
-                Vec.y -= 1f;
-                OldPos = GrapePos;
-                GrapePos.y = GrapePos.y - 1f;
-            }
-            yield return new WaitForSeconds(2.0f);
-            transform.localPosition = Vec;
-            moving = false;
+            switch (array2D[0, 0]) {
+                case 1:
+                    if (GrapePos.y + 1 < 4 && array2D[(int)GrapePos.x, (int)GrapePos.y + 1] > 0 && GrapePos.y + 1 != OldPos.y) {
+                        Vec.y += 1f;
+                        OldPos = GrapePos;
+                        GrapePos.y = GrapePos.y + 1f;
+                    } else if (GrapePos.y - 1 > -1 && array2D[(int)GrapePos.x, (int)GrapePos.y - 1] >= 0 && GrapePos.y - 1 != OldPos.y) {
+                        Vec.y -= 1f;
+                        OldPos = GrapePos;
+                        GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        Debug.Log("Cannot Move");
+                    }
+                    transform.localPosition = Vec;
+                    yield return new WaitForSeconds(1.0f);
+                    moving = false;
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }      
         }
     }
-
 }
