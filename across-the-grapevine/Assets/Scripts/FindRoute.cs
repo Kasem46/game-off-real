@@ -5,9 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class FindRoute : MonoBehaviour
 {
-    //Array is structured such that x values are inside brackets while y values are the brackets themselves
+    //Array is structured such that y stacked bottom row to top row
     //change to int array with numbers repesenting tile type
-    int[,] array2D = new int[,] { { 1, 0, 1, 1 }, {0, 1, 1, 1}, { 1, 1, 1, 1}, { 1, 1, 1, 1} };
+    int[,] array2D = new int[,] { { 2, 1, 1, 1 }, {1, 1, 1, 1}, { 2, 1, 1, 1}, { 2, 1, 1, 1} };
     public ITilemap tilemap;
     public Vector3 GrapePos;
     public Vector3 OldPos;
@@ -29,12 +29,12 @@ public class FindRoute : MonoBehaviour
         if (moving == false) {
             moving = true;
             switch (array2D[0, 0]) {
-                case 1:
-                    if (GrapePos.y + 1 < 4 && array2D[(int)GrapePos.x, (int)GrapePos.y + 1] > 0 && GrapePos.y + 1 != OldPos.y) {
+                case 1: //Vertical Line
+                    if (GrapePos.y + 1 < 4 && new List<int>{2}.Contains(array2D[(int)GrapePos.x, (int)GrapePos.y + 1]) && GrapePos.y + 1 != OldPos.y) {
                         Vec.y += 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y + 1f;
-                    } else if (GrapePos.y - 1 > -1 && array2D[(int)GrapePos.x, (int)GrapePos.y - 1] >= 0 && GrapePos.y - 1 != OldPos.y) {
+                    } else if (GrapePos.y - 1 > -1 && new List<int>{2}.Contains(array2D[(int)GrapePos.x, (int)GrapePos.y - 1]) && GrapePos.y - 1 != OldPos.y) {
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
@@ -45,7 +45,21 @@ public class FindRoute : MonoBehaviour
                     yield return new WaitForSeconds(1.0f);
                     moving = false;
                     break;
-                case 2:
+                case 2: //Horisontal Line
+                    if (GrapePos.x + 1 < 4 && new List<int>{2}.Contains(array2D[(int)GrapePos.x + 1, (int)GrapePos.y]) && GrapePos.x + 1 != OldPos.x) {
+                        Vec.x += 1f;
+                        OldPos = GrapePos;
+                        GrapePos.x = GrapePos.x + 1f;
+                    }else if (GrapePos.x - 1 > -1 && new List<int>{2}.Contains(array2D[(int)GrapePos.x - 1, (int)GrapePos.y]) && GrapePos.x - 1 != OldPos.x){ //add numbers to .Contains to add possilbe tiles grape can move to
+                        Vec.x -= 1f;
+                        OldPos = GrapePos;
+                        GrapePos.x = GrapePos.x - 1f;
+                    } else {
+                        Debug.Log("Cannot Move");
+                    }
+                    transform.localPosition = Vec;
+                    yield return new WaitForSeconds(1.0f);
+                    moving = false;
                     break;
                 case 3:
                     break;
