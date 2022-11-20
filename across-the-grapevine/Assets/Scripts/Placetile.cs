@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 public class Placetile : MonoBehaviour
 {
-    public Tile VerticalLine; public Tile HorisontalLine; public Tile LeftDownTurn; public Tile RightDownTurn; public Tile LeftUpTurn; public Tile RightUpTurn; public Tile ForkUp; public Tile ForkDown; public Tile ForkLeft; public Tile ForkRight; public Tile Crossroads; public Tile SelectedTile; //Declare Tiles in tilemap (good idea)
+    public Tile VerticalLine; public Tile obstical; public Tile HorisontalLine; public Tile LeftDownTurn; public Tile RightDownTurn; public Tile LeftUpTurn; public Tile RightUpTurn; public Tile ForkUp; public Tile ForkDown; public Tile ForkLeft; public Tile ForkRight; public Tile Crossroads; public Tile SelectedTile; //Declare Tiles in tilemap (good idea)
     public Tilemap tilemap;
     public Vector3 screenPosition;
     public Vector3 worldPosition;
@@ -22,7 +22,7 @@ public class Placetile : MonoBehaviour
         int x = (int)Math.Floor(worldPosition.x);
         Vector3Int mousePos = (new Vector3Int (x, y, 0));
         //good luck, I don't know what this is
-        if (GameStart.start == false && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2)))
+        if (GameStart.start == false && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2)) && tilemap.GetTile(mousePos) != obstical)
         {
             if (SelectedTile != null && Input.GetMouseButtonDown(0))
             {
