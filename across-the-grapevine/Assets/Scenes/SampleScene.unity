@@ -2147,8 +2147,22 @@ MonoBehaviour:
   GrapePos: {x: 0, y: 0, z: 0}
   OldPos: {x: 0, y: 0, z: 0}
   Vec: {x: 0, y: 0, z: 0}
-  Test: {x: 0, y: 0, z: 0}
+  Pos: {x: 0, y: 0, z: 0}
   moving: 0
+  constructs: 0
+  Line_Vertical: {fileID: 11400000, guid: 6ef7a295b367681469f882effd1a1961, type: 2}
+  Line_Horisontal: {fileID: 11400000, guid: 845f1f43d673f4b41bcdfe5b8d54e73e, type: 2}
+  Down_Right_Turn: {fileID: 11400000, guid: 1d2947de1df3e0d49800a0d770b582e5, type: 2}
+  Down_Left_Turn: {fileID: 11400000, guid: 946646de1bef32d41821105e80e9641c, type: 2}
+  Up_Right_Turn: {fileID: 11400000, guid: a24e372758a02ff4bb7ae31eca17c03f, type: 2}
+  Up_Left_Turn: {fileID: 11400000, guid: dca2f86909a6a574fab6f0a807473174, type: 2}
+  Fork_Right: {fileID: 11400000, guid: ff07bc4a381e130408e57fff25247065, type: 2}
+  Fork_Left: {fileID: 11400000, guid: 691d6ba77a0138341940957043574cfb, type: 2}
+  Fork_Down: {fileID: 11400000, guid: 8ae6de11ff8190344a6880abac1cea3c, type: 2}
+  Fork_Up: {fileID: 11400000, guid: d975992a627c30a4899810b5e21b6cf8, type: 2}
+  Crossroads: {fileID: 11400000, guid: 28bf483a9233aae4db9cf858d016cd97, type: 2}
+  START: {fileID: 11400000, guid: 47d74404e914a61469977c86cb7ab0ac, type: 2}
+  END: {fileID: 11400000, guid: 6fb33e39b218acf4ba62934ce35e3456, type: 2}
 --- !u!1 &1923200055
 GameObject:
   m_ObjectHideFlags: 0
