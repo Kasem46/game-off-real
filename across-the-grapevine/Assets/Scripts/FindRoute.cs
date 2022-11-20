@@ -15,6 +15,7 @@ public class FindRoute : MonoBehaviour
     int[,] array2D = new int[,] { {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0} };
     public Tilemap tilemap;
     public Vector3 GrapePos;
+    public Vector3Int RealPos;
     public Vector3 OldPos;
     public Vector3 Vec;
     public Vector3Int Pos;
@@ -42,10 +43,16 @@ public class FindRoute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RealPos.y = (int)GrapePos.y - 2;
+        RealPos.x = (int)GrapePos.x - 2;
+        TileBase grape = tilemap.GetTile(RealPos);
+        if (grape == END) {
+            GameStart.win = true;
+        }
         if (GameStart.start == false && constructs == false) {
             StartCoroutine(Arraycreation());
         }
-        if (GameStart.start == true) {
+        if (GameStart.start == true && GameStart.win == false) {
             StartCoroutine(Move());
         } 
     }
@@ -104,6 +111,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 2: //Horisontal Line
@@ -115,6 +124,8 @@ public class FindRoute : MonoBehaviour
                         Vec.x -= 1f;
                         OldPos = GrapePos;
                         GrapePos.x = GrapePos.x - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 3: //Down-Right turn
@@ -126,6 +137,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 4: //Down-Left turn
@@ -137,6 +150,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 5: //Up-Right turn
@@ -148,6 +163,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y += 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y + 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 6: //Up-Left turn
@@ -159,6 +176,8 @@ public class FindRoute : MonoBehaviour
                         Vec.x -= 1f;
                         OldPos = GrapePos;
                         GrapePos.x = GrapePos.x - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 7: //Right Fork
@@ -174,6 +193,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 8: //Left Fork
@@ -189,6 +210,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 9: //Down Fork
@@ -204,6 +227,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 10: //Up Fork
@@ -219,6 +244,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y += 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y + 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
                 case 11: //Crossroads
@@ -239,6 +266,8 @@ public class FindRoute : MonoBehaviour
                         Vec.y -= 1f;
                         OldPos = GrapePos;
                         GrapePos.y = GrapePos.y - 1f;
+                    } else {
+                        GameStart.lose = true;
                     }
                     break;
             }
