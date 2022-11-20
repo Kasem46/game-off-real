@@ -218,7 +218,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -228,7 +228,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -298,7 +298,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -372,11 +372,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 47d74404e914a61469977c86cb7ab0ac, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6fb33e39b218acf4ba62934ce35e3456, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: a28c7bb23a4e3bd4a99c4a0622ad1638, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: be7412a6c67ccb4489d67ffd137688b8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 452283fb87d7c1f42aaf4fd9100108c2, type: 3}
   - m_RefCount: 1
@@ -394,11 +396,13 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: dbd5ecac35088ee4189bd73bdb5c5789, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 9c5dcc0d650eb02499224edc06a6440d, type: 3}
+    m_Data: {fileID: 21300000, guid: be7412a6c67ccb4489d67ffd137688b8, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: a49ad1ddbdc594541a8a9cefc920d942, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 0dbaeb0bb57d5ba4cbda0f09c4168f4f, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 9c5dcc0d650eb02499224edc06a6440d, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 13
     m_Data:
@@ -2145,6 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 297834970}
   GrapePos: {x: 0, y: 0, z: 0}
+  RealPos: {x: 0, y: 0, z: 0}
   OldPos: {x: 0, y: 0, z: 0}
   Vec: {x: 0, y: 0, z: 0}
   Pos: {x: 0, y: 0, z: 0}
