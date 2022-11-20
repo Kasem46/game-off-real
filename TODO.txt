@@ -1,6 +1,5 @@
 ########## Framework
-obsticles 
-win condition
+obsticles
 ########## GAME
 Make the puzzles
 Progression system
