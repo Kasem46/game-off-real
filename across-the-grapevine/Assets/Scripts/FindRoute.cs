@@ -26,7 +26,9 @@ public class FindRoute : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(Move());
+        if (GameStart.start == true) {
+            StartCoroutine(Move());
+        } 
     }
     IEnumerator Move()
     {

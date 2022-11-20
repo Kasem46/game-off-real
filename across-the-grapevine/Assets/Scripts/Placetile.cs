@@ -22,12 +22,12 @@ public class Placetile : MonoBehaviour
         int x = (int)Math.Floor(worldPosition.x);
         Vector3Int mousePos = (new Vector3Int (x, y, 0));
         //good luck, I don't know what this is
-        if (SelectedTile != null) {
+        if (SelectedTile != null && GameStart.start == false) {
             if (Input.GetMouseButtonDown(0) && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2))) {
                 Paint(mousePos, SelectedTile);
             }
         }
-        if (SelectedTile == null) {
+        if (SelectedTile == null && GameStart.start == false) {
             if (mousePos.y == 1 && mousePos.x == -5 && Input.GetMouseButtonDown(0) && tileCounter.numbers[1] > 0) {
                 SelectedTile = ForkRight;
                 tileCounter.RemoveTile(1);
