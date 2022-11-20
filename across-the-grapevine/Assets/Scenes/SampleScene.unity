@@ -2143,9 +2143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f121ff6204a7f45a1d98984530f0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 297834970}
   GrapePos: {x: 0, y: 0, z: 0}
   OldPos: {x: 0, y: 0, z: 0}
   Vec: {x: 0, y: 0, z: 0}
+  Test: {x: 0, y: 0, z: 0}
   moving: 0
 --- !u!1 &1923200055
 GameObject:

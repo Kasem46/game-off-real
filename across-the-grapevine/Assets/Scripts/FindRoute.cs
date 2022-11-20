@@ -12,16 +12,22 @@ public class FindRoute : MonoBehaviour
     //  1   5
     //  0   4
     //change to int array with numbers repesenting tile type
-    int[,] array2D = new int[,] { {7, 7, 7, 7}, {0, 0, 0, 2}, {0, 0, 0, 2}, {0, 0, 0, 2} };
-    public ITilemap tilemap;
+    int[,] array2D = new int[,] { {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0} };
+    public Tilemap tilemap;
     public Vector3 GrapePos;
     public Vector3 OldPos;
     public Vector3 Vec;
+    public Vector3Int Test;
     public bool moving;
     void Start() {
+        Test.y = -2;
+        Test.x = -2;
+        Test.z = 0;
         Vec.y = -1.5f;
         Vec.x = -1.5f;
         moving = false;
+        TileBase currentTile = tilemap.GetTile(Test);
+        Debug.Log(currentTile);
     }
     // Update is called once per frame
     void Update()
