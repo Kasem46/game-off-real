@@ -1,5 +1,4 @@
 ########## Framework
-Deleteable tiles, gets readded to placible tiles
 obsticles 
 win condition
 ########## GAME
