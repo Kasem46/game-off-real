@@ -12,7 +12,7 @@ public class FindRoute : MonoBehaviour
     //  1   5
     //  0   4
     //change to int array with numbers repesenting tile type
-    int[,] array2D = new int[,] { {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0} };
+    int[,] array2D = new int[,] { {5, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 4} };
     public Tilemap tilemap;
     public Vector3 GrapePos;
     public Vector3 OldPos;
@@ -20,18 +20,18 @@ public class FindRoute : MonoBehaviour
     public Vector3Int Test;
     public bool moving;
     void Start() {
-        Test.y = -2;
-        Test.x = -2;
+        Test.y = 0;
+        Test.x = 0;
         Test.z = 0;
         Vec.y = -1.5f;
         Vec.x = -1.5f;
         moving = false;
-        TileBase currentTile = tilemap.GetTile(Test);
-        Debug.Log(currentTile);
     }
     // Update is called once per frame
     void Update()
     {
+        TileBase currentTile = tilemap.GetTile(Test);
+        Debug.Log(currentTile);
         if (GameStart.start == true) {
             StartCoroutine(Move());
         } 
