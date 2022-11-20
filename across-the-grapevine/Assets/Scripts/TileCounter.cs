@@ -30,5 +30,8 @@ public class TileCounter : MonoBehaviour
     public void RemoveTile(int i) {
         numbers[i] -= 1;
     }
+    public void AddTile(int i) {
+        numbers[i] += 1;
+    }
 
 }

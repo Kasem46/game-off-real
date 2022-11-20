@@ -22,8 +22,48 @@ public class Placetile : MonoBehaviour
         int x = (int)Math.Floor(worldPosition.x);
         Vector3Int mousePos = (new Vector3Int (x, y, 0));
         //good luck, I don't know what this is
-        if (SelectedTile != null && GameStart.start == false) {
-            if (Input.GetMouseButtonDown(0) && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2))) {
+        if (GameStart.start == false && ((mousePos.y <= 1 && mousePos.x <= 0 && mousePos.x >= -2 && mousePos.y >= -1) || (mousePos.y <= 0 && mousePos.x <= 1 && mousePos.x >= -1 && mousePos.y >= -2)))
+        {
+            if (SelectedTile != null && Input.GetMouseButtonDown(0))
+            {
+                Paint(mousePos, SelectedTile);
+            }
+            else if (SelectedTile == null && Input.GetMouseButtonDown(0)){
+                TileBase temp = tilemap.GetTile(mousePos);
+                if (temp == VerticalLine) {
+                    tileCounter.AddTile(9);
+                }
+                else if(temp == ForkRight) {
+                    tileCounter.AddTile(1);
+                }
+                else if (temp == ForkLeft){
+                    tileCounter.AddTile(2);
+                }
+                else if (temp == ForkUp){
+                    tileCounter.AddTile(3);
+                }
+                else if (temp == ForkDown){
+                    tileCounter.AddTile(0);
+                }
+                else if (temp == LeftDownTurn){
+                    tileCounter.AddTile(5);
+                }
+                else if (temp == LeftUpTurn){
+                    tileCounter.AddTile(6);
+                }
+                else if (temp == RightUpTurn){
+                    tileCounter.AddTile(7);
+                }
+                else if (temp == RightDownTurn){
+                    tileCounter.AddTile(4);
+                }
+                else if (temp == HorisontalLine){
+                    tileCounter.AddTile(10);
+                }
+                else if (temp == Crossroads){
+                    tileCounter.AddTile(8);
+                }
+
                 Paint(mousePos, SelectedTile);
             }
         }
