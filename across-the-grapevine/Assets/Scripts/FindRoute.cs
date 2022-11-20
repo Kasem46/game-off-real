@@ -12,32 +12,85 @@ public class FindRoute : MonoBehaviour
     //  1   5
     //  0   4
     //change to int array with numbers repesenting tile type
-    int[,] array2D = new int[,] { {5, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 4} };
+    int[,] array2D = new int[,] { {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0} };
     public Tilemap tilemap;
     public Vector3 GrapePos;
     public Vector3 OldPos;
     public Vector3 Vec;
-    public Vector3Int Test;
+    public Vector3Int Pos;
     public bool moving;
+    public bool constructs;
+    public TileBase Line_Vertical;
+    public TileBase Line_Horisontal;
+    public TileBase Down_Right_Turn;
+    public TileBase Down_Left_Turn;
+    public TileBase Up_Right_Turn;
+    public TileBase Up_Left_Turn;
+    public TileBase Fork_Right;
+    public TileBase Fork_Left;
+    public TileBase Fork_Down;
+    public TileBase Fork_Up;
+    public TileBase Crossroads;
+    public TileBase START;
+    public TileBase END;
     void Start() {
-        Test.y = 0;
-        Test.x = 0;
-        Test.z = 0;
         Vec.y = -1.5f;
         Vec.x = -1.5f;
         moving = false;
+        constructs = false;
     }
     // Update is called once per frame
     void Update()
     {
-        TileBase currentTile = tilemap.GetTile(Test);
-        Debug.Log(currentTile);
+        if (GameStart.start == false && constructs == false) {
+            StartCoroutine(Arraycreation());
+        }
         if (GameStart.start == true) {
             StartCoroutine(Move());
         } 
     }
-    IEnumerator Move()
-    {
+    IEnumerator Arraycreation() {
+        constructs = false;
+        for (int i = 0; i < 4; i++){
+            for (int j = 0; j < 4; j++){
+                Pos.x = i - 2;
+                Pos.y = j - 2;
+                TileBase currentTile = tilemap.GetTile(Pos);
+                if (currentTile == Line_Vertical) {
+                    array2D[i, j] = 1;
+                } else if (currentTile == Line_Horisontal) {
+                    array2D[i, j] = 2;
+                } else if (currentTile == Down_Right_Turn) {
+                    array2D[i, j] = 3;
+                } else if (currentTile == Down_Left_Turn) {
+                    array2D[i, j] = 4;
+                } else if (currentTile == Up_Right_Turn) {
+                    array2D[i, j] = 5;
+                } else if (currentTile == Up_Left_Turn) {
+                    array2D[i, j] = 6;
+                } else if (currentTile == Fork_Right) {
+                    array2D[i, j] = 7;
+                } else if (currentTile == Fork_Left) {
+                    array2D[i, j] = 8;
+                } else if (currentTile == Fork_Down) {
+                    array2D[i, j] = 9;
+                } else if (currentTile == Fork_Up) {
+                    array2D[i, j] = 10;
+                } else if (currentTile == Crossroads) {
+                    array2D[i, j] = 11;
+                } else if (currentTile == START){
+                    array2D[i, j] = 5;
+                } else if (currentTile == END){
+                    array2D[i, j] = 4;
+                } else {
+                    array2D[i, j] = 0;
+                }
+            }
+        }
+        yield return new WaitForSeconds(0.01f);
+        constructs = false;
+    }
+    IEnumerator Move(){
         //Change IEnumerator to detect number from array (swictch case), use number to detect tile type and therefore tell which direction grape can go in
         if (moving == false) {
             moving = true;
