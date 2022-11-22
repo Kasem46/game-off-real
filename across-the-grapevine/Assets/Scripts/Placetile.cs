@@ -26,9 +26,11 @@ public class Placetile : MonoBehaviour
         {
             if (SelectedTile != null && Input.GetMouseButtonDown(0))
             {
-                Paint(mousePos, SelectedTile);
-            }
-            else if (SelectedTile == null && Input.GetMouseButtonDown(0)){
+                TileBase temp = tilemap.GetTile(mousePos);
+                if (temp == null) {
+                    Paint(mousePos, SelectedTile);
+                }
+            } else if (Input.GetMouseButtonDown(0)) {
                 TileBase temp = tilemap.GetTile(mousePos);
                 if (temp == VerticalLine) {
                     tileCounter.AddTile(9);
@@ -49,6 +51,7 @@ public class Placetile : MonoBehaviour
                     tileCounter.AddTile(5);
                 }
                 else if (temp == LeftUpTurn){
+                    Debug.Log(temp);
                     tileCounter.AddTile(6);
                 }
                 else if (temp == RightUpTurn){
