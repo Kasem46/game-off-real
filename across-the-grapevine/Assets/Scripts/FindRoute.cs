@@ -38,6 +38,7 @@ public class FindRoute : MonoBehaviour
     void Start() {
         Vec.y = -1.5f;
         Vec.x = -1.5f;
+        Vec.z = -1;
         moving = false;
         constructs = false;
     }

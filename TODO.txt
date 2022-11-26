@@ -1,6 +1,6 @@
 ########## Framework
-obsticles
+Ui to move to next level or return to level selection after winning
+Restart option after losing
 ########## GAME
-Make the puzzles
-Progression system
-Level select UI?
+Information scene before main menu
+Really just art and music
