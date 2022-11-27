@@ -1,6 +1,5 @@
 ########## Framework
-Ui to move to next level or return to level selection after winning
-Restart option after losing
+Tell when levels are locked
 ########## GAME
 Information scene before main menu
 Really just art and music
