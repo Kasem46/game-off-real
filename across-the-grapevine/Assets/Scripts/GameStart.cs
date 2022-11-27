@@ -50,8 +50,8 @@ public class GameStart : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape) && level != 0) {
             level = 0;
-            start = false;
             win = false;
+            start = false;
             moveToLevelSelect();
         }
     }
@@ -64,11 +64,11 @@ public class GameStart : MonoBehaviour
         SceneManager.LoadScene(currentScene.buildIndex);
     }
     public void nextLevel() {
-        if (win == true) {
-            Scene currentScene = SceneManager.GetActiveScene();
-            start = false;
-            SceneManager.LoadScene(currentScene.buildIndex + 1);
+        if (win == true && start == true) {
             win = false;
+            start = false;
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.buildIndex + 1);
         }
     }
     public void moveToLevelSelect() {
@@ -91,25 +91,25 @@ public class GameStart : MonoBehaviour
         }
     }
     public void moveToLevel3() {
-        if (win1 == true) {
+        if (win2 == true) {
             SceneManager.LoadScene("Level3");
             level = 3;
         }
     }
     public void moveToLevel4() {
-        if (win1 == true) {
+        if (win3 == true) {
             SceneManager.LoadScene("Level4");
             level = 4;
         }
     }
     public void moveToLevel5() {
-        if (win1 == true) {
+        if (win4 == true) {
             SceneManager.LoadScene("Level5");
             level = 5;
         }
     }
     public void moveToLevel6() {
-        if (win1 == true) {
+        if (win5 == true) {
             SceneManager.LoadScene("Level6");
             level = 6;
         }
