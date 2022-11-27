@@ -39,6 +39,7 @@ public class FindRoute : MonoBehaviour
         Vec.y = -1.5f;
         Vec.x = -1.5f;
         Vec.z = -1;
+        transform.localPosition = Vec;
         moving = false;
         constructs = false;
     }
