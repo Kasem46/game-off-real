@@ -21,7 +21,6 @@ public class GameStart : MonoBehaviour
     public void onClick()
     {
         start = true;
-        win = false;
     }
     void Update() { 
         if (lose == true) {
@@ -69,6 +68,7 @@ public class GameStart : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             start = false;
             SceneManager.LoadScene(currentScene.buildIndex + 1);
+            win = false;
         }
     }
     public void moveToLevelSelect() {
