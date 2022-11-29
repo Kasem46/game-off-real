@@ -15,6 +15,7 @@ public class Locked : MonoBehaviour
     public RawImage check4;
     public RawImage check5;
     public RawImage check6;
+    public RawImage Trophy;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class Locked : MonoBehaviour
         check4.enabled = false;
         check5.enabled = false;
         check6.enabled = false;
+        Trophy.enabled = false;
     }
 
     void Update()
@@ -56,6 +58,8 @@ public class Locked : MonoBehaviour
         if (GameStart.win6 == true) {
             check6.enabled = true;
         }
-        //if trophie
+        if (GameStart.win1 == true && GameStart.win2 == true && GameStart.win3 == true && GameStart.win4 == true && GameStart.win5 == true && GameStart.win6 == true) {
+            Trophy.enabled = true;
+        }
     }
 }
