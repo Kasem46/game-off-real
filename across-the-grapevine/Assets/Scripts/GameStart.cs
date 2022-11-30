@@ -65,9 +65,9 @@ public class GameStart : MonoBehaviour
     }
     public void nextLevel() {
         if (win == true && start == true) {
-            win = false;
             start = false;
             Scene currentScene = SceneManager.GetActiveScene();
+            win = false;
             SceneManager.LoadScene(currentScene.buildIndex + 1);
         }
     }

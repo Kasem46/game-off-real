@@ -35,6 +35,7 @@ public class FindRoute : MonoBehaviour
     public TileBase START;
     public TileBase END;
     public TileBase BIRD;
+    private bool helpme = false;
     void Start() {
         Vec.y = -1.5f;
         Vec.x = -1.5f;
@@ -49,8 +50,11 @@ public class FindRoute : MonoBehaviour
         RealPos.y = (int)GrapePos.y - 2;
         RealPos.x = (int)GrapePos.x - 2;
         TileBase grape = tilemap.GetTile(RealPos);
-        if (grape == END) {
+        if (grape == END && helpme == false) {
+            helpme = true;
             GameStart.win = true;
+        } else if (grape != END && helpme == true) {
+            helpme = false;
         }
         if (GameStart.start == false && constructs == false) {
             StartCoroutine(Arraycreation());

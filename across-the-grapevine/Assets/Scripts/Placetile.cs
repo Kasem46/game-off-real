@@ -51,7 +51,6 @@ public class Placetile : MonoBehaviour
                     tileCounter.AddTile(5);
                 }
                 else if (temp == LeftUpTurn){
-                    Debug.Log(temp);
                     tileCounter.AddTile(6);
                 }
                 else if (temp == RightUpTurn){
