@@ -17,11 +17,9 @@ public class ButtonAppaer : MonoBehaviour {
         if (GameStart.win == true) {
             next.enabled = true;
             next2.enabled = true;
-            Debug.Log(GameStart.win);
         } else {
             next.enabled = false;
             next2.enabled = false;
-            Debug.Log(GameStart.win);
         }
     }
 }
