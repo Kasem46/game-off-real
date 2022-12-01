@@ -479,7 +479,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 845f1f43d673f4b41bcdfe5b8d54e73e, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 47d74404e914a61469977c86cb7ab0ac, type: 2}
+    m_Data: {fileID: 11400000, guid: 7328955a7b61965438152b16e26c42ce, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6fb33e39b218acf4ba62934ce35e3456, type: 2}
   - m_RefCount: 1
@@ -508,7 +508,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: c203b793206aa7743b13235414079ad4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: a49ad1ddbdc594541a8a9cefc920d942, type: 3}
+    m_Data: {fileID: 21300000, guid: e26cf5b6bcd06ad47a480a6e67ddbf92, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: d30676eb81c011349ac15c074fd0a655, type: 3}
   - m_RefCount: 1
@@ -535,6 +535,8 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 16
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: 4.8387e-41, g: 4.8387e-41, b: 4.8387e-41, a: 4.8387e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2562,7 +2564,7 @@ MonoBehaviour:
   Fork_Down: {fileID: 11400000, guid: a7ff17f35b214fb4d87ee8dad4ddea9d, type: 2}
   Fork_Up: {fileID: 11400000, guid: cf904ef7a2b325943b6752c009730bc5, type: 2}
   Crossroads: {fileID: 11400000, guid: 28bf483a9233aae4db9cf858d016cd97, type: 2}
-  START: {fileID: 11400000, guid: 47d74404e914a61469977c86cb7ab0ac, type: 2}
+  START: {fileID: 11400000, guid: 7328955a7b61965438152b16e26c42ce, type: 2}
   END: {fileID: 11400000, guid: 6fb33e39b218acf4ba62934ce35e3456, type: 2}
   BIRD: {fileID: 11400000, guid: add7f899657f9b347b330f9d0e6417d7, type: 2}
 --- !u!1 &1923200055
