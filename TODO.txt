@@ -1,0 +1,4 @@
+########## Framework
+########## GAME
+Information scene before main menu
+Really just art and music
